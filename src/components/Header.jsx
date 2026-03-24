@@ -1,4 +1,3 @@
-
 import logo from '../assets/logo.png';
 
 export default function Header() {
@@ -6,15 +5,15 @@ export default function Header() {
     <header className="flex flex-col items-center mt-8 mb-8 md:mb-16">
       <img 
         src={logo} 
-        className="mb-8 w-44 h-44 object-contain" 
+        className="object-contain mb-8 w-44 h-44" 
         alt="A canvas" 
       />
-      <h1 className="text-xl md:text-4xl font-semibold tracking-widest text-center uppercase text-amber-800 font-title">
+      <h1 className="text-xl font-semibold tracking-widest text-center uppercase mb:text-4xl text-amber-800 font-title">
         ReactArt
       </h1>
-      <p className="text-stone-500 m-0 text-center">
+      <p className="m-0 text-center text-stone-500">
         A community of artists and art-lovers.
       </p>
     </header>
   );
-}
+}   

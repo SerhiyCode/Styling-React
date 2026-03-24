@@ -10,8 +10,6 @@ const ControlContainer = styled.div`
   gap: 0.5rem;
   margin-bottom: 1.5rem;
 `
- 
-
 
 export default function AuthInputs() {
   const [enteredEmail, setEnteredEmail] = useState('');
@@ -29,35 +27,30 @@ export default function AuthInputs() {
   function handleLogin() {
     setSubmitted(true);
   }
-
+  
   const emailNotValid = submitted && !enteredEmail.includes('@');
   const passwordNotValid = submitted && enteredPassword.trim().length < 6;
 
   return (
     <div id="auth-inputs"> 
-    <ControlContainer>       
-        
+    <ControlContainer>               
           <Input   
             label="Email"
             $invalid={emailNotValid}
             type="email"                                    
-            onChange={(event) => handleInputChange('email', event.target.value)}/>                
+            onChange={(event) => handleInputChange('email', event.target.value)} />                
           <Input 
             label="Password"
             type="password"
             $invalid={passwordNotValid}
             onChange={(event) =>
-              handleInputChange('password', event.target.value)
-            }
-          />
-                 
-      
+              handleInputChange('password', event.target.value)} />                      
       </ControlContainer>  
       <div className="actions">
-        <button type="button" className="text-button">
-          Create a new account
+        <button type="button" >
+            Create a new account
         </button>
-        <Button className='button' onClick={handleLogin}>Sign In</Button>
+        <Button onClick={handleLogin}>Sign In</Button>
       </div>
     </div>
   );
